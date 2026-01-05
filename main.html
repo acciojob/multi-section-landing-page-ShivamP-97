@@ -2,183 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Responsive Flexbox Template</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Form</title>
 
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #1a1a1a;
+      color: #222;
+    }
+
+    header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      min-height: 100vh;
+      padding: 20px;
+      background: #222;
     }
 
-    .form-container {
-      background-color: #ffffff;
-      padding: 2rem;
-      width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    #logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
     }
 
-    h1 {
-      margin-bottom: 1.5rem;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      color: #fff;
+    }
+
+    section {
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .form-group {
-      margin-bottom: 1.2rem;
+    .hero {
+      position: relative;
+      color: white;
     }
 
-    label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: bold;
+    .hero .background-image {
+      background: #555;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
     }
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.6rem;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      list-style: none;
     }
 
-    input:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #005fcc;
+    .grid li {
+      background: #eee;
+      padding: 40px;
+      width: 150px;
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 120px;
+    .title {
+      font-size: 28px;
+      margin-bottom: 30px;
     }
 
-    .error {
-      color: #b00020;
-      font-size: 0.9rem;
-      margin-top: 0.3rem;
+    .reviews p {
+      max-width: 600px;
+      margin: 10px auto;
     }
 
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: #005fcc;
-      color: #ffffff;
+    .contact form {
+      margin-top: 20px;
+    }
+
+    .contact input {
+      padding: 10px;
+      width: 250px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 10px 20px;
+      background: #222;
+      color: #fff;
       border: none;
-      border-radius: 4px;
-      font-size: 1.1rem;
       cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #004bb5;
     }
   </style>
 </head>
 
 <body>
-  <form class="form-container" method="POST" action="/submit" novalidate>
-    <h1>Contact Us</h1>
 
-    <div class="form-group">
-      <label for="fullName">Full Name *</label>
-      <input
-        type="text"
-        id="fullName"
-        name="fullName"
-        required
-        aria-required="true"
-      />
-      <div class="error" id="nameError"></div>
-    </div>
+  <!-- HEADER -->
+  <header>
+    <a href="#" id="logo">Website Logo</a>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Work</li>
+        <li>Features</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="form-group">
-      <label for="email">Email Address *</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        aria-required="true"
-      />
-      <div class="error" id="emailError"></div>
-    </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="background-image"></div>
+    <h1>Responsive Flexbox Template</h1>
+  </section>
 
-    <div class="form-group">
-      <label for="phone">Phone Number (optional)</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="e.g. 123-456-7890"
-      />
-      <div class="error" id="phoneError"></div>
-    </div>
+  <!-- OUR WORK -->
+  <section class="our-work">
+    <h2 class="title">Some of our work</h2>
+    <ul class="grid">
+      <li>Work 1</li>
+      <li>Work 2</li>
+      <li>Work 3</li>
+      <li>Work 4</li>
+    </ul>
+  </section>
 
-    <div class="form-group">
-      <label for="message">Message *</label>
-      <textarea
-        id="message"
-        name="message"
-        required
-        aria-required="true"
-      ></textarea>
-      <div class="error" id="messageError"></div>
-    </div>
+  <!-- FEATURES -->
+  <section class="features">
+    <h2 class="title">Features and services</h2>
+    <ul class="grid">
+      <li>Feature 1</li>
+      <li>Feature 2</li>
+      <li>Feature 3</li>
+    </ul>
+  </section>
 
-    <button type="submit">Submit</button>
-  </form>
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <h2 class="title">What others say:</h2>
+    <p class="quote">"Amazing service!"</p>
+    <p class="author">— Alex</p>
 
-  <script>
-    const form = document.querySelector("form");
+    <p class="quote">"Fantastic results."</p>
+    <p class="author">— Jamie</p>
 
-    form.addEventListener("submit", function (event) {
-      let isValid = true;
+    <p class="quote">"Highly recommend."</p>
+    <p class="author">— Taylor</p>
+  </section>
 
-      document.querySelectorAll(".error").forEach(e => e.textContent = "");
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2 class="title">Join our newsletter</h2>
+    <form>
+      <input type="email" placeholder="Email address" />
+      <button class="btn" type="submit">Subscribe now</button>
+    </form>
+  </section>
 
-      const name = document.getElementById("fullName").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      if (!name) {
-        document.getElementById("nameError").textContent = "Full name is required.";
-        isValid = false;
-      }
-
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email) {
-        document.getElementById("emailError").textContent = "Email address is required.";
-        isValid = false;
-      } else if (!emailPattern.test(email)) {
-        document.getElementById("emailError").textContent = "Enter a valid email address.";
-        isValid = false;
-      }
-
-      const phonePattern = /^[0-9+\-\s()]*$/;
-      if (phone && !phonePattern.test(phone)) {
-        document.getElementById("phoneError").textContent = "Enter a valid phone number.";
-        isValid = false;
-      }
-
-      if (message.length < 100) {
-        document.getElementById("messageError").textContent =
-          "Message must be at least 100 characters.";
-        isValid = false;
-      }
-
-      if (!isValid) {
-        event.preventDefault();
-      }
-    });
-  </script>
 </body>
 </html>
